@@ -1,24 +1,34 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const countdownEl = document.getElementById('countdown')
 
-setupCounter(document.querySelector('#counter'))
+const now = new Date()
+const tomorrowUTC = new Date(
+	Date.UTC(
+		now.getUTCFullYear(),
+		now.getUTCMonth(),
+		now.getUTCDate() + 1,
+		0,
+		0,
+		0,
+	),
+)
+const pad = (n) => n.toString().padStart(2, '0')
+
+function updateCountdown() {
+	const currentTime = new Date()
+	const diff = tomorrowUTC.getTime() - currentTime.getTime()
+
+	const totalSeconds = Math.floor(diff / 1000)
+	const hours = Math.floor(totalSeconds / 3600)
+	const minutes = Math.floor((totalSeconds % 3600) / 60)
+	const seconds = totalSeconds % 60
+
+	const countdownText = `${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`
+
+	countdownEl.textContent = countdownText
+	document.title = `Happy Hour (${countdownText})`
+}
+
+updateCountdown()
+setInterval(updateCountdown, 1000)
