@@ -64,20 +64,16 @@ body {
 	font-family: 'Roboto Mono', monospace;
 }
 
-footer {
-	position: absolute;
-	transform: translateX(-50%);
-	left: 50%;
-	bottom: 1rem;
+#mention {
 	font-size: 1rem;
 	color: gray;
 }
 
-footer a {
+#mention a {
 	color: gray;
 }
 
-footer a:hover {
+#mention a:hover {
 	color: #fe00cf;
 	transition: all ease-out 350ms;
 }
