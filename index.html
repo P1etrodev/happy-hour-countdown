@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Countdown to Tomorrow</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				min-height: 100dvh;
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+				justify-content: center;
+				font-family: sans-serif;
+				font-size: 2rem;
+				text-align: center;
+				gap: 1rem;
+			}
+
+			#countdown {
+				padding: 1rem;
+				background: #f0f0f0;
+				font-weight: 900;
+				font-size: 4rem;
+				width: 32rem;
+				font-family: 'Roboto Mono', monospace;
+			}
+
+			#text {
+				font-family: Montserrat, Arial, Helvetica, sans-serif;
+			}
+
+			#text strong {
+				color: #fe00cf;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="countdown">Loading...</div>
+		<div id="text">
+			left until next <br /><strong>Happy Hour</strong> reset (UTC 00:00)
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
