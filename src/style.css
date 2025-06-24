@@ -17,6 +17,7 @@ body {
 	font-size: 2rem;
 	text-align: center;
 	gap: 1rem;
+	background-color: #212121;
 }
 
 #countdown {
@@ -30,6 +31,7 @@ body {
 
 #text {
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	color: whitesmoke;
 }
 
 #text strong {
